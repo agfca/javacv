@@ -1,0 +1,97 @@
+如果您想在Windows系统上将Spring Boot应用程序作为服务运行，并且希望应用程序在系统启动时自动启动，可以按照以下步骤进行设置：
+
+安装Java环境并设置JAVA_HOME环境变量。
+
+创建一个目录，用于存储应用程序的JAR文件和配置文件。
+
+将您的Spring Boot应用程序的JAR文件和所有依赖项复制到该目录中。
+
+创建一个名为“application.properties”的文件，该文件应包含应用程序的所有配置属性。例如：
+
+server.port=8080
+spring.datasource.url=jdbc:mysql://localhost:3306/mydatabase
+spring.datasource.username=root
+spring.datasource.password=secret
+
+使用文本编辑器创建一个新文件，将以下内容复制到该文件中：
+
+@echo off
+set SERVICE_NAME=MyServiceName
+set DISPLAY_NAME=My Service Display Name
+set DESCRIPTION=My Service Description
+set JAVA_HOME=C:\Program Files\Java\jdk1.8.0_201
+set JAR_PATH=C:\path\to\your\jar\file
+set CONFIG_PATH=C:\path\to\your\config\file
+
+set PR_INSTALL=%JAR_PATH%
+set PR_CLASS=com.example.MyApplicationClass
+set PR_STARTUP=auto
+set PR_STARTMODE=jvm
+set PR_CLASSPATH=%CONFIG_PATH%;%JAR_PATH%
+set PR_JVM="%JAVA_HOME%\bin\server\jvm.dll"
+set PR_JVMMS=256
+set PR_JVMMX=1024
+set PR_JVMSS=1024
+
+prunsrv.exe //IS//%SERVICE_NAME% ^
+--DisplayName="%DISPLAY_NAME%" ^
+--Description="%DESCRIPTION%" ^
+--Install="%PR_INSTALL%" ^
+--Startup="%PR_STARTUP%" ^
+--StartMode="%PR_STARTMODE%" ^
+--Classpath="%PR_CLASSPATH%" ^
+--Jvm="%PR_JVM%" ^
+--JvmMx="%PR_JVMMX%" ^
+--JvmMs="%PR_JVMMS%" ^
+--JvmSs="%PR_JVMSS%" ^
+--StartClass="%PR_CLASS%"
+
+prunsrv.exe //US//%SERVICE_NAME% ^
+--JvmOptions="-Dspring.config.location=%CONFIG_PATH%\application.properties" ^
+--StartClass="%PR_CLASS%"
+
+prunsrv.exe //SS//%SERVICE_NAME%
+
+修改以上脚本中的以下变量：
+
+SERVICE_NAME: 您的服务名称，将用于在服务管理器中标识您的应用程序。
+DISPLAY_NAME: 在服务管理器中显示的应用程序名称。
+DESCRIPTION: 应用程序的简短说明。
+JAVA_HOME: 您的Java安装路径。
+JAR_PATH: 包含应用程序JAR文件的路径。
+CONFIG_PATH: 包含应用程序配置文件的路径。
+PR_CLASS: 应用程序的启动类。
+将该脚本保存为“install.bat”。
+
+在命令提示符中，进入包含“install.bat”文件的目录，并执行以下命令：
+
+install.bat
+
+这将安装您的Spring Boot应用程序作为Windows服务，并配置它在系统启动时
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+如果您的Spring Boot应用程序是在Windows 10系统上运行的，您可以按照以下步骤将其作为后台进程运行，并将控制台日志写入到一个文本文件中：
+在命令提示符或PowerShell中，使用以下命令启动Spring Boot应用程序：
+
+start /B java -Xmx3g -jar yourJarFile.jar > log.txt 2>&1
+其中，“yourJarFile.jar”是要运行的JAR文件的名称， “log.txt”是将日志写入的文本文件名。
+-Xmx3g 参数将Java虚拟机的最大堆大小设置为3GB。
+“start”命令将应用程序启动为后台进程。
+“/B”参数表示在新窗口中启动应用程序。
+“> log.txt”将控制台输出重定向到“log.txt”文件中。
+“2>&1”将标准错误输出流（stderr）重定向到标准输出流（stdout）中，以确保所有日志信息都被写入到日志文件中。
+按回车键运行命令。
