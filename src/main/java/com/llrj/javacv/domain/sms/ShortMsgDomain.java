@@ -79,19 +79,19 @@ public class ShortMsgDomain {
         // 同一类监控：未发短信、短信信息不同、短信未发三次
         if (this.checkSendMsg(monitorEnum, msg)) {
             // 发送短信, 成功则记录到 map
-            if(this.restTemplateExchange(sendPlainTextMessageUrl,paramsMap)){
+            if(this.sendSms(sendPlainTextMessageUrl,paramsMap)){
                 this.addMsgMapRecord(monitorEnum, msg, allNormal);
             }
             // 发送邮件
             if (!StringUtils.isEmpty(imgFile) && this.checkSendEmail(monitorEnum, msg)) {
-                if (emailDomain.someMethod(imgFile)) {
+                if (emailDomain.sendEmail(imgFile)) {
                     this.addEmailMapRecord(monitorEnum, msg, allNormal);
                 }
             }
         }
     }
 
-    public boolean restTemplateExchange(String url, Map<String,String> body) {
+    public boolean sendSms(String url, Map<String,String> body) {
         HttpHeaders headers = new HttpHeaders();
         headers.add("User-Agent", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.64 Safari/537.36");
         headers.add("accept", MediaType.ALL_VALUE);

@@ -34,7 +34,7 @@ public class EmailDomain {
         MimeMessage message = javaMailSender.createMimeMessage();
         MimeMessageHelper helper = new MimeMessageHelper(message, true);
         helper.setTo(to);
-        helper.setFrom(appConfig.getEmailFrom());
+        helper.setFrom(appConfig.getOpencvEmailFrom());
         helper.setSubject(subject);
         helper.setText(text, true);
         FileSystemResource file = new FileSystemResource(new File(pathToImage));
@@ -43,10 +43,10 @@ public class EmailDomain {
         log.info("邮件发送成功,to:{}, image:{}", String.join(",", to) ,pathToImage);
     }
 
-    public boolean someMethod(String imgFilePath) {
+    public boolean sendEmail(String imgFilePath) {
         //String imgFilePath = "C:\\Users\\guofucheng\\Desktop\\temp\\opencv\\test.jpg";
         try {
-            this.sendEmailWithImage(appConfig.getEmailTo().split(","),
+            this.sendEmailWithImage(appConfig.getOpencvEmailTo().split(","),
                     "【符合保密要求，可在手机端查阅】sjw",
                     "<html><body><img src='cid:Image'></body></html>",
                     imgFilePath);

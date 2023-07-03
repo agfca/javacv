@@ -60,7 +60,7 @@ public class PingFileDomain {
         1.全部正常：通知一次
         2.访问失败：通知三次
          */
-        shortMsgDomain.sendMsgAndEmail(MonitorTypeEnum.IP_MONITOR, allNormalFlag, appConfig.getPingUsers(), msg.toString(), null);
+        shortMsgDomain.sendMsgAndEmail(MonitorTypeEnum.IP_MONITOR, allNormalFlag, appConfig.getPingSmsTo(), msg.toString(), null);
     }
 
 
