@@ -82,11 +82,11 @@ public class ShortMsgDomain {
             if(this.sendSms(sendPlainTextMessageUrl,paramsMap)){
                 this.addMsgMapRecord(monitorEnum, msg, allNormal);
             }
-            // 发送邮件
-            if (!StringUtils.isEmpty(imgFile) && this.checkSendEmail(monitorEnum, msg)) {
-                if (emailDomain.sendEmail(imgFile)) {
-                    this.addEmailMapRecord(monitorEnum, msg, allNormal);
-                }
+        }
+        // 发送邮件
+        if (!StringUtils.isEmpty(imgFile) && this.checkSendEmail(monitorEnum, msg)) {
+            if (emailDomain.sendEmail(imgFile)) {
+                this.addEmailMapRecord(monitorEnum, msg, allNormal);
             }
         }
     }
@@ -110,8 +110,7 @@ public class ShortMsgDomain {
 
     private boolean checkSendMsg(MonitorTypeEnum monitorEnum, String msg) {
         ShortMsg history = monitorMsgMap.get(monitorEnum.getCode());
-        return Objects.isNull(history)
-                || !history.getMsg().equals(msg)
+        return Objects.isNull(history) || !history.getMsg().equals(msg)
                 // 异常， 三次
                 || (!history.getNormalFlag() && history.getSendNum() < msgErrorNum)
                 // 正常，一次
@@ -135,10 +134,9 @@ public class ShortMsgDomain {
 
     private boolean checkSendEmail(MonitorTypeEnum monitorEnum, String msg) {
         ShortMsg history = monitorEmailMap.get(monitorEnum.getCode());
-        return Objects.isNull(history)
-                || !history.getMsg().equals(msg)
+        return Objects.isNull(history) || !history.getMsg().equals(msg)
                 // 异常 或者 正常，都只发送一次
-                || (history.getNormalFlag() && history.getSendNum() < emailNum);
+                || (history.getSendNum() < emailNum);
     }
 
     /**
