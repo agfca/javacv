@@ -97,16 +97,13 @@ public class ShortMsgDomain {
         headers.add("accept", MediaType.ALL_VALUE);
         headers.setContentType(MediaType.APPLICATION_JSON_UTF8);
         HttpEntity<Object> requestEntity = new HttpEntity<>(body, headers);
-
-        /*log.info("发送短信成功, 调用URL:{}, requestEntity:{}, 返回信息:{}", url, requestEntity, "response");
-        return true;*/
+        log.info("发送短信, 调用URL:{}, requestBody:{}", url, body);
         try {
             ResponseEntity<String> response = restTemplate.exchange(url, HttpMethod.POST, requestEntity, String.class);
-            log.info("发送短信成功, 调用URL:{}, requestEntity:{}, 返回信息:{}", url, requestEntity, response);
             return true;
         }
         catch (Exception e) {
-            log.error("发送短信失败, 调用URL:{}, requestEntity:{}, 异常信息:{}", url, requestEntity, e.getMessage());
+            log.error("发送短信失败:{}", e.getMessage());
             return false;
         }
     }

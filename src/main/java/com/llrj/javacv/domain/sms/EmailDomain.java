@@ -40,11 +40,10 @@ public class EmailDomain {
         FileSystemResource file = new FileSystemResource(new File(pathToImage));
         helper.addInline("Image", file);
         javaMailSender.send(message);
-        log.info("邮件发送成功,to:{}, image:{}", String.join(",", to) ,pathToImage);
     }
 
     public boolean sendEmail(String imgFilePath) {
-        //String imgFilePath = "C:\\Users\\guofucheng\\Desktop\\temp\\opencv\\test.jpg";
+        log.info("发送邮件,to:{}, image:{}", appConfig.getOpencvEmailTo() ,imgFilePath);
         try {
             this.sendEmailWithImage(appConfig.getOpencvEmailTo().split(","),
                     "【符合保密要求，可在手机端查阅】sjw",
@@ -53,7 +52,7 @@ public class EmailDomain {
             return true;
         }
         catch (Exception e) {
-            log.error("邮件发送失败：{}", e.getMessage());
+            log.error("发送邮件失败：{}", e.getMessage());
             return false;
         }
     }
