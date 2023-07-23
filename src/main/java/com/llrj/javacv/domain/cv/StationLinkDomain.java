@@ -48,8 +48,9 @@ public class StationLinkDomain {
             link.setX(b.getX() - 2 * sumX3);
             link.setY(b.getY() - 2 * sumY3);
         }
-        else if ("响水洞-苏家湾".equals(link.getName())
-                || "龙门浩-弹子石".equals(link.getName())) {
+        else if (
+                //"响水洞-苏家湾".equals(link.getName())||
+                "龙门浩-弹子石".equals(link.getName())) {
             link.setX(b.getX() - 2 * sumX3);
             link.setY(b.getY() - 2 * sumY3);
         }
