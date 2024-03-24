@@ -76,11 +76,18 @@ public class StationDomain {
         }
     }
     private void sortSpecial(List<List<StationPoint>> allStationList){
-        this.sortSpecialImpl(allStationList,4, 4);
-        this.sortSpecialImpl(allStationList,5, 4);
+        //("迎龙","大田") 、("天文站","五步")
+        this.sortSpecialImpl(allStationList,4, 3);
+        this.sortSpecialImpl(allStationList,4, 5);
+        //("莲池","姜家") 、("茶园基地","鹿角所")
+        this.sortSpecialImpl(allStationList,5, 5);
         this.sortSpecialImpl(allStationList,5, 8);
+        //("双河站","木洞站")  、 ("鹿角站","海棠")   ("天星寺","石龙站")   ("虎啸","炒油场")
         this.sortSpecialImpl(allStationList,6, 0);
+        this.sortSpecialImpl(allStationList,6, 9);
+        this.sortSpecialImpl(allStationList,6, 4);
         this.sortSpecialImpl(allStationList,6, 6);
+        //("接龙站","接龙所") 、 ("南湖站","永隆")
         this.sortSpecialImpl(allStationList,7, 7);
         this.sortSpecialImpl(allStationList,7, 9);
     }
@@ -90,9 +97,9 @@ public class StationDomain {
         List<StationPoint> stationList1 = new ArrayList<>(2);
         List<StationPoint> stationList2 = new ArrayList<>(11);
         List<StationPoint> stationList3 = new ArrayList<>(6);
-        List<StationPoint> stationList4 = new ArrayList<>(10);
+        List<StationPoint> stationList4 = new ArrayList<>(11);
         List<StationPoint> stationList5 = new ArrayList<>(11);
-        List<StationPoint> stationList6 = new ArrayList<>(10);
+        List<StationPoint> stationList6 = new ArrayList<>(13);
         List<StationPoint> stationList7 = new ArrayList<>(11);
         List<StationPoint> stationList8 = new ArrayList<>(8);
         List<StationPoint> stationList9 = new ArrayList<>(1);

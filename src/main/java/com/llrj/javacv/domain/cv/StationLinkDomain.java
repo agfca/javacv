@@ -277,27 +277,29 @@ public class StationLinkDomain {
         this.addLink(StationNameConstant.AllStationName[2][7], StationNameConstant.AllStationName[2][8],stationList, stationLinkList);
         this.addLink(StationNameConstant.AllStationName[2][8], StationNameConstant.AllStationName[3][3],stationList, stationLinkList);
         this.addLink(StationNameConstant.AllStationName[2][8], StationNameConstant.AllStationName[2][9],stationList, stationLinkList);
-        this.addLink(StationNameConstant.AllStationName[2][9], StationNameConstant.AllStationName[4][4],stationList, stationLinkList);
-        this.addLink(StationNameConstant.AllStationName[2][9], StationNameConstant.AllStationName[3][4],stationList, stationLinkList);
+        this.addLink(StationNameConstant.AllStationName[2][10], StationNameConstant.AllStationName[4][5],stationList, stationLinkList);
+        this.addLink(StationNameConstant.AllStationName[2][10], StationNameConstant.AllStationName[3][4],stationList, stationLinkList);
 
         this.addLink(StationNameConstant.AllStationName[3][1], StationNameConstant.AllStationName[5][0],stationList, stationLinkList);
-        this.addLink(StationNameConstant.AllStationName[3][3], StationNameConstant.AllStationName[4][4],stationList, stationLinkList);
-        this.addLink(StationNameConstant.AllStationName[3][4], StationNameConstant.AllStationName[4][8],stationList, stationLinkList);
+        this.addLink(StationNameConstant.AllStationName[3][3], StationNameConstant.AllStationName[4][5],stationList, stationLinkList);
+        this.addLink(StationNameConstant.AllStationName[3][4], StationNameConstant.AllStationName[4][9],stationList, stationLinkList);
         this.addLink(StationNameConstant.AllStationName[3][4], StationNameConstant.AllStationName[3][5],stationList, stationLinkList);
-        this.addLink(StationNameConstant.AllStationName[3][5], StationNameConstant.AllStationName[4][9],stationList, stationLinkList);
+        this.addLink(StationNameConstant.AllStationName[3][5], StationNameConstant.AllStationName[4][10],stationList, stationLinkList);
 
         //4
         this.addLink(StationNameConstant.AllStationName[4][0], StationNameConstant.AllStationName[5][0],stationList, stationLinkList);
         this.addLink(StationNameConstant.AllStationName[4][1], StationNameConstant.AllStationName[5][1],stationList, stationLinkList);
         this.addLink(StationNameConstant.AllStationName[4][2], StationNameConstant.AllStationName[5][1],stationList, stationLinkList);
         this.addLink(StationNameConstant.AllStationName[4][2], StationNameConstant.AllStationName[4][3],stationList, stationLinkList);
-        this.addLink(StationNameConstant.AllStationName[4][3], StationNameConstant.AllStationName[4][5],stationList, stationLinkList);
         this.addLink(StationNameConstant.AllStationName[4][3], StationNameConstant.AllStationName[4][4],stationList, stationLinkList);
-        this.addLink(StationNameConstant.AllStationName[4][4], StationNameConstant.AllStationName[4][8],stationList, stationLinkList);
-        this.addLink(StationNameConstant.AllStationName[4][5], StationNameConstant.AllStationName[4][6],stationList, stationLinkList);
-        this.addLink(StationNameConstant.AllStationName[4][8], StationNameConstant.AllStationName[4][7],stationList, stationLinkList);
-        this.addLink(StationNameConstant.AllStationName[4][8], StationNameConstant.AllStationName[5][8],stationList, stationLinkList);
+        this.addLink(StationNameConstant.AllStationName[4][3], StationNameConstant.AllStationName[4][5],stationList, stationLinkList);
+        this.addLink(StationNameConstant.AllStationName[4][3], StationNameConstant.AllStationName[4][6],stationList, stationLinkList);
+        this.addLink(StationNameConstant.AllStationName[4][4], StationNameConstant.AllStationName[5][7],stationList, stationLinkList);
+        this.addLink(StationNameConstant.AllStationName[4][5], StationNameConstant.AllStationName[4][9],stationList, stationLinkList);
+        this.addLink(StationNameConstant.AllStationName[4][6], StationNameConstant.AllStationName[4][7],stationList, stationLinkList);
         this.addLink(StationNameConstant.AllStationName[4][8], StationNameConstant.AllStationName[4][9],stationList, stationLinkList);
+        this.addLink(StationNameConstant.AllStationName[4][9], StationNameConstant.AllStationName[5][8],stationList, stationLinkList);
+        this.addLink(StationNameConstant.AllStationName[4][9], StationNameConstant.AllStationName[4][10],stationList, stationLinkList);
 
         //5
         this.addLink(StationNameConstant.AllStationName[5][0], StationNameConstant.AllStationName[8][0],stationList, stationLinkList);
@@ -308,35 +310,47 @@ public class StationLinkDomain {
         this.addLink(StationNameConstant.AllStationName[5][2], StationNameConstant.AllStationName[6][0],stationList, stationLinkList);
         this.addLink(StationNameConstant.AllStationName[5][3], StationNameConstant.AllStationName[5][7],stationList, stationLinkList);
         this.addLink(StationNameConstant.AllStationName[5][4], StationNameConstant.AllStationName[5][5],stationList, stationLinkList);
-        this.addLink(StationNameConstant.AllStationName[5][4], StationNameConstant.AllStationName[5][7],stationList, stationLinkList);
-        this.addLink(StationNameConstant.AllStationName[5][6], StationNameConstant.AllStationName[6][3],stationList, stationLinkList);
-        this.addLink(StationNameConstant.AllStationName[5][7], StationNameConstant.AllStationName[6][4],stationList, stationLinkList);
+        this.addLink(StationNameConstant.AllStationName[5][5], StationNameConstant.AllStationName[5][7],stationList, stationLinkList);
+        this.addLink(StationNameConstant.AllStationName[5][6], StationNameConstant.AllStationName[6][4],stationList, stationLinkList);
+        this.addLink(StationNameConstant.AllStationName[5][7], StationNameConstant.AllStationName[6][6],stationList, stationLinkList);
         this.addLink(StationNameConstant.AllStationName[5][7], StationNameConstant.AllStationName[5][8],stationList, stationLinkList);
         this.addLink(StationNameConstant.AllStationName[5][8], StationNameConstant.AllStationName[5][9],stationList, stationLinkList);
-        this.addLink(StationNameConstant.AllStationName[5][9], StationNameConstant.AllStationName[6][6],stationList, stationLinkList);
-        this.addLink(StationNameConstant.AllStationName[5][10], StationNameConstant.AllStationName[6][9],stationList, stationLinkList);
+        this.addLink(StationNameConstant.AllStationName[5][9], StationNameConstant.AllStationName[6][9],stationList, stationLinkList);
+        this.addLink(StationNameConstant.AllStationName[5][10], StationNameConstant.AllStationName[6][12],stationList, stationLinkList);
 
+
+        //新增4个站 大田[4][4]+柳银站[6][2]、石龙站[6][5]、炒油场[6][7]
+        //武堂-柳银站
+        this.addSpecialLink(StationNameConstant.AllStationName[5][3], StationNameConstant.AllStationName[6][2], stationList, stationLinkList, true);
+        this.addSpecialLink(StationNameConstant.AllStationName[5][3], StationNameConstant.AllStationName[6][2], stationList, stationLinkList, false);
+        //木洞-柳银站
+        this.addLink(StationNameConstant.AllStationName[6][1], StationNameConstant.AllStationName[6][2],stationList, stationLinkList);
+        //天星寺-石龙站
+        this.addLink(StationNameConstant.AllStationName[6][4], StationNameConstant.AllStationName[6][5],stationList, stationLinkList);
+        //炒油场-土桥   炒油场-走马羊
+        this.addLink(StationNameConstant.AllStationName[6][7], StationNameConstant.AllStationName[7][2],stationList, stationLinkList);
+        this.addLink(StationNameConstant.AllStationName[6][7], StationNameConstant.AllStationName[7][4],stationList, stationLinkList);
         //6
         this.addLink(StationNameConstant.AllStationName[6][0], StationNameConstant.AllStationName[6][1],stationList, stationLinkList);
         this.addLink(StationNameConstant.AllStationName[6][1], StationNameConstant.AllStationName[7][1],stationList, stationLinkList);
-        this.addLink(StationNameConstant.AllStationName[6][2], StationNameConstant.AllStationName[6][3],stationList, stationLinkList);
+        this.addLink(StationNameConstant.AllStationName[6][3], StationNameConstant.AllStationName[6][4],stationList, stationLinkList);
         //todo 天星寺-虎啸   虎啸-海棠
-        this.addSpecialLink(StationNameConstant.AllStationName[6][3], StationNameConstant.AllStationName[6][4], stationList, stationLinkList, true);
-        this.addSpecialLink(StationNameConstant.AllStationName[6][3], StationNameConstant.AllStationName[6][4], stationList, stationLinkList, false);
-        this.addSpecialLink(StationNameConstant.AllStationName[6][4], StationNameConstant.AllStationName[6][7], stationList, stationLinkList, true);
-        this.addSpecialLink(StationNameConstant.AllStationName[6][4], StationNameConstant.AllStationName[6][7], stationList, stationLinkList, false);
+        this.addSpecialLink(StationNameConstant.AllStationName[6][4], StationNameConstant.AllStationName[6][6], stationList, stationLinkList, true);
+        this.addSpecialLink(StationNameConstant.AllStationName[6][4], StationNameConstant.AllStationName[6][6], stationList, stationLinkList, false);
+        this.addSpecialLink(StationNameConstant.AllStationName[6][6], StationNameConstant.AllStationName[6][10], stationList, stationLinkList, true);
+        this.addSpecialLink(StationNameConstant.AllStationName[6][6], StationNameConstant.AllStationName[6][10], stationList, stationLinkList, false);
 
-        this.addLink(StationNameConstant.AllStationName[6][4], StationNameConstant.AllStationName[6][5],stationList, stationLinkList);
-        this.addLink(StationNameConstant.AllStationName[6][5], StationNameConstant.AllStationName[6][6],stationList, stationLinkList);
-        this.addLink(StationNameConstant.AllStationName[6][6], StationNameConstant.AllStationName[6][7],stationList, stationLinkList);
-        this.addLink(StationNameConstant.AllStationName[6][6], StationNameConstant.AllStationName[6][9],stationList, stationLinkList);
-        this.addLink(StationNameConstant.AllStationName[6][7], StationNameConstant.AllStationName[7][6],stationList, stationLinkList);
+        this.addLink(StationNameConstant.AllStationName[6][6], StationNameConstant.AllStationName[6][8],stationList, stationLinkList);
+        this.addLink(StationNameConstant.AllStationName[6][8], StationNameConstant.AllStationName[6][9],stationList, stationLinkList);
+        this.addLink(StationNameConstant.AllStationName[6][9], StationNameConstant.AllStationName[6][10],stationList, stationLinkList);
+        this.addLink(StationNameConstant.AllStationName[6][9], StationNameConstant.AllStationName[6][12],stationList, stationLinkList);
+        this.addLink(StationNameConstant.AllStationName[6][10], StationNameConstant.AllStationName[7][6],stationList, stationLinkList);
 
 
         //7
-        this.addLink(StationNameConstant.AllStationName[6][8], StationNameConstant.AllStationName[7][9],stationList, stationLinkList);
-        this.addLink(StationNameConstant.AllStationName[6][8], StationNameConstant.AllStationName[6][9],stationList, stationLinkList);
-        this.addLink(StationNameConstant.AllStationName[6][9], StationNameConstant.AllStationName[8][7],stationList, stationLinkList);
+        this.addLink(StationNameConstant.AllStationName[6][11], StationNameConstant.AllStationName[7][9],stationList, stationLinkList);
+        this.addLink(StationNameConstant.AllStationName[6][11], StationNameConstant.AllStationName[6][12],stationList, stationLinkList);
+        this.addLink(StationNameConstant.AllStationName[6][12], StationNameConstant.AllStationName[8][7],stationList, stationLinkList);
 
         this.addLink(StationNameConstant.AllStationName[7][0], StationNameConstant.AllStationName[8][0],stationList, stationLinkList);
         this.addLink(StationNameConstant.AllStationName[7][0], StationNameConstant.AllStationName[8][1],stationList, stationLinkList);

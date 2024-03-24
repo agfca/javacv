@@ -141,8 +141,8 @@ public class JavaCVDomain {
     private static final int cvErrorSmsSendNum = 3;
     // 图像识别错误发送短信, 是否暂停
     private boolean checkCvErrorSmsSend(List<StationPoint> stationPointList) {
-        //识别到的站点不是74个，发送图片识别错误短信
-        if (stationPointList.size() == 74) {
+        //识别到的站点不是78个，发送图片识别错误短信
+        if (stationPointList.size() == 78) {
             cvErrorNum = 0;
             return false;
         }
@@ -221,14 +221,14 @@ public class JavaCVDomain {
             if (inputImage != null) {
                 cvReleaseImage(inputImage);
             }
-            //1.读取图片
+            //1.读取图片 需要满足图片分辨率 （1920*1080）
             inputImage = cvLoadImage(imgFilePath);
             // x 300- 1750
             // y 0-1050
             int x = 300;
-            int y = 0;
+            int y = 50;
             int width = 1450;
-            int height = 1050;
+            int height = 1030;
             if (rgbImg == null) {
                 rgbImg = IplImage.create(width, height, inputImage.depth(), inputImage.nChannels());
             }
@@ -266,7 +266,7 @@ public class JavaCVDomain {
     }
 
     private List<StationPoint> getStationPointList() {
-        //找到每个颜色的点位,一共74个
+        //找到每个颜色的点位,一共78个
         List<StationPoint> stationList = new ArrayList<>(100);
         //this.getColorTest(hsvImg);
         //this.getCyanAndBlue(hsvImg, stationList);//12
@@ -605,7 +605,7 @@ public class JavaCVDomain {
     public void main1() {
         //1.读取图片
         //IplImage orgImg = cvLoadImage("C:\\Users\\guofucheng\\Desktop\\temp\\temp1.jpg");
-        IplImage orgImg = cvLoadImage("C:\\Users\\guofucheng\\Desktop\\temp\\opencv\\test.jpg");
+        IplImage orgImg = cvLoadImage("D:\\opencv\\20240324102739.jpg");
         //Mat myMat = imread("C:\\Users\\guofucheng\\Desktop\\temp\\opencv\\moban.jpg");
         //myMat.ptr().
 
