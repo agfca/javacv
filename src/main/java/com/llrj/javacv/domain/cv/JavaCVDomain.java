@@ -149,8 +149,7 @@ public class JavaCVDomain {
         else {
             //多次识别错误， 发送报警信息
             if (++cvErrorNum >= cvErrorSmsSendNum) {
-                shortMsgDomain.sendMsgAndEmail(MonitorTypeEnum.IMG_MONITOR, false,
-                        appConfig.getOpencvSmsTo(), appConfig.getOpencvErrorStr(), lastTimeImgFilePath);
+                shortMsgDomain.sendMsgAndEmail(MonitorTypeEnum.IMG_MONITOR, false, appConfig.getOpencvErrorStr(), lastTimeImgFilePath);
             }
             log.info("识别错误,次数:{}，识别数量:{}", cvErrorNum, stationPointList.size());
             return true;
@@ -211,8 +210,7 @@ public class JavaCVDomain {
         1.全部正常：通知一次
         2.访问失败：通知三次
          */
-        shortMsgDomain.sendMsgAndEmail(MonitorTypeEnum.IMG_MONITOR, redStationNameList.isEmpty() && warnLinkNameSet.isEmpty(),
-                appConfig.getOpencvSmsTo(), msg, imgFilePath);
+        shortMsgDomain.sendMsgAndEmail(MonitorTypeEnum.IMG_MONITOR, redStationNameList.isEmpty() && warnLinkNameSet.isEmpty(), msg, imgFilePath);
     }
 
     /**

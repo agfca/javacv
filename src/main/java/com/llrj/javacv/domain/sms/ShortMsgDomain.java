@@ -1,5 +1,6 @@
 package com.llrj.javacv.domain.sms;
 
+import com.llrj.javacv.domain.config.AppConfig;
 import com.llrj.javacv.domain.enums.MonitorTypeEnum;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,6 +35,9 @@ public class ShortMsgDomain {
     @Autowired
     private EmailDomain emailDomain;
 
+    @Autowired
+    private AppConfig appConfig;
+
     private String token = "32ae73f15919e44e65555ee2aec1b9f1";
     private String sendTextMessageUrl = "http://10.186.42.172:9093/message/sendTextMessage";
     private String sendPlainTextMessageUrl = "http://10.186.42.172:9093/message/sendPlainTextMessage";
@@ -58,21 +62,21 @@ public class ShortMsgDomain {
     "token": "1688d5d6b489ddf4xxxx798d3ff16e36d"
 }
 */
-    public void sendMsgAndEmail(MonitorTypeEnum monitorEnum, boolean allNormal, String users, String msg, String imgFile) {
+    public void sendMsgAndEmail(MonitorTypeEnum monitorEnum, boolean allNormal, String msg, String imgFile) {
         Map<String, String> paramsMap = new HashMap<>();
-        paramsMap.put("touser", users);
         paramsMap.put("content", msg);
         paramsMap.put("type", "1");
         paramsMap.put("token", token);
         paramsMap.put("sceneId", "10006");
+        paramsMap.put("subject", monitorEnum.getDesc());
         switch (monitorEnum) {
             // IP
             case IP_MONITOR:
-                paramsMap.put("subject", MonitorTypeEnum.IP_MONITOR.getDesc());
+                paramsMap.put("touser", appConfig.getPingSmsTo());
                 break;
             // 拓扑图
             case IMG_MONITOR:
-                paramsMap.put("subject", MonitorTypeEnum.IMG_MONITOR.getDesc());
+                paramsMap.put("touser", appConfig.getOpencvSmsTo());
                 break;
             default:
         }
